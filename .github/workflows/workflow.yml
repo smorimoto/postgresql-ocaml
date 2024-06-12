@@ -69,6 +69,5 @@ jobs:
         uses: kit-ty-kate/setup-ocaml@win52
         with:
           ocaml-compiler: "5.2"
-          dune-cache: true
 
       - uses: kit-ty-kate/setup-ocaml/lint-doc@win52
