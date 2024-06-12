@@ -34,6 +34,9 @@ jobs:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
           allow-prerelease-opam: true
 
+      - run: brew install postgresql@14
+        if: ${{ runner.os == 'macOS' }}
+
       - run: opam pin add mingw-w64-shims git+https://github.com/dra27/mingw-w64-shims.git#internals
         if: ${{ runner.os == 'Windows' }}
 
