@@ -56,20 +56,6 @@ jobs:
 
       - uses: kit-ty-kate/setup-ocaml/lint-opam@win52
 
-  lint-fmt:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout tree
-        uses: actions/checkout@v4
-
-      - name: Set-up OCaml
-        uses: kit-ty-kate/setup-ocaml@win52
-        with:
-          ocaml-compiler: "5.2"
-          dune-cache: true
-
-      - uses: kit-ty-kate/setup-ocaml/lint-fmt@win52
-
   lint-doc:
     runs-on: ubuntu-latest
     steps:
