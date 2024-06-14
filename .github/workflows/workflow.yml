@@ -33,7 +33,6 @@ jobs:
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
           allow-prerelease-opam: true
-          dune-cache: true
 
       - run: brew install postgresql@14
         if: ${{ runner.os == 'macOS' }}
