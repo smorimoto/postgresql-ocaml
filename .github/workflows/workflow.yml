@@ -33,6 +33,7 @@ jobs:
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
           allow-prerelease-opam: true
+          dune-cache: true
 
       - run: brew install postgresql@14
         if: ${{ runner.os == 'macOS' }}
@@ -42,9 +43,9 @@ jobs:
 
       - run: opam install . --deps-only --with-test
 
-      - run: opam exec -- dune build @all
+      - run: dune build @all
 
-      - run: opam exec -- dune runtest
+      - run: dune runtest
 
   lint-opam:
     runs-on: ubuntu-latest
